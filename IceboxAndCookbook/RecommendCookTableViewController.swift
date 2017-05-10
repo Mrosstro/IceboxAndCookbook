@@ -72,6 +72,12 @@ class RecommendCookTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    // row 選擇第＊個 didSelectRowAt
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("選擇：第 \(indexPath.row) 個")
+    }
+    
+    
     //▼有幾組 row
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return iName.count
@@ -88,5 +94,6 @@ class RecommendCookTableViewController: UITableViewController {
         return cell
     }
     @IBAction func ClickLove(_ sender: UIButton) {
+        
     }
 }

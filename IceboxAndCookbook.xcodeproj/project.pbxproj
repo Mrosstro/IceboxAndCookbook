@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2C4BD4831EC2BFE30093DFCF /* iceboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */; };
+		2C4BD4871EC3119C0093DFCF /* SeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */; };
 		2C6133A61EBF16D000ED5BA3 /* CookRKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */; };
 		2C6133AC1EC002C200ED5BA3 /* MyCookBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */; };
 		2C6133AE1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AD1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift */; };
 		2C6133B41EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133B31EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift */; };
-		2C6133B61EC021E500ED5BA3 /* SeeCookBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133B51EC021E500ED5BA3 /* SeeCookBookTableViewController.swift */; };
+		2C6133B61EC021E500ED5BA3 /* SeeCookBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133B51EC021E500ED5BA3 /* SeeCookBookViewController.swift */; };
 		2C6133D91EC184BA00ED5BA3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */; };
 		2C6133DD1EC1880500ED5BA3 /* DBManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133DC1EC1880500ED5BA3 /* DBManage.swift */; };
 		2C91532B1EB9E70600371521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91532A1EB9E70600371521 /* AppDelegate.swift */; };
@@ -31,11 +32,12 @@
 
 /* Begin PBXFileReference section */
 		2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iceboxViewController.swift; sourceTree = "<group>"; };
+		2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViewController.swift; sourceTree = "<group>"; };
 		2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookRKTableViewController.swift; sourceTree = "<group>"; };
 		2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBookTableViewController.swift; sourceTree = "<group>"; };
 		2C6133AD1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBookTableViewCell.swift; sourceTree = "<group>"; };
 		2C6133B31EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeCookBookTableViewCell.swift; sourceTree = "<group>"; };
-		2C6133B51EC021E500ED5BA3 /* SeeCookBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeCookBookTableViewController.swift; sourceTree = "<group>"; };
+		2C6133B51EC021E500ED5BA3 /* SeeCookBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeCookBookViewController.swift; sourceTree = "<group>"; };
 		2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		2C6133DB1EC1854100ED5BA3 /* SQLHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLHeader.h; sourceTree = "<group>"; };
 		2C6133DC1EC1880500ED5BA3 /* DBManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManage.swift; sourceTree = "<group>"; };
@@ -104,7 +106,8 @@
 		2C6133B01EC0201200ED5BA3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2C6133B51EC021E500ED5BA3 /* SeeCookBookTableViewController.swift */,
+				2C6133B51EC021E500ED5BA3 /* SeeCookBookViewController.swift */,
+				2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -348,8 +351,9 @@
 				2CA5EB041EBDA30F00D85CF5 /* RecommendCookTableViewCell.swift in Sources */,
 				2C91532D1EB9E70600371521 /* ViewController.swift in Sources */,
 				2C9153631EBB221600371521 /* MyiceboxTableViewController.swift in Sources */,
-				2C6133B61EC021E500ED5BA3 /* SeeCookBookTableViewController.swift in Sources */,
+				2C6133B61EC021E500ED5BA3 /* SeeCookBookViewController.swift in Sources */,
 				2C9153601EBB20E000371521 /* MyiceboxTableViewCell.swift in Sources */,
+				2C4BD4871EC3119C0093DFCF /* SeeViewController.swift in Sources */,
 				2CA5EAFD1EBD917200D85CF5 /* testViewController.swift in Sources */,
 				2C6133A61EBF16D000ED5BA3 /* CookRKTableViewController.swift in Sources */,
 				2CA5EB0D1EBF149900D85CF5 /* CookRKTableViewCell.swift in Sources */,
