@@ -15,5 +15,4 @@ class MyCookBookTableViewCell: UITableViewCell {
     @IBOutlet weak var MLike: UILabel!
     @IBOutlet weak var MWatch: UILabel!
     
-
 }

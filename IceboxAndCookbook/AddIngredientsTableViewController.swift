@@ -1,27 +1,173 @@
-//
-//  AddIngredients.swift
-//  IceboxAndCookbook
-//
-//  Created by Mrosstro on 2017/5/6.
-//  Copyright © 2017年 Mrosstro. All rights reserved.
-//
-
 import UIKit
 
 class AddIngredientsTableViewController: UITableViewController, UIPickerViewDelegate {
+    var db = DBManage()
+    var fType:[String] = []
     
-    //▼範例用
-    let meals = ["肉類","蔬菜","奶類","豆類"]
-
+    var gData:Bool = false
+    var gName:String?
+    var gDay:Int?
+    
     //▼宣告pickerView
-    @IBOutlet weak var pickerView: UIPickerView!
-
+    @IBOutlet weak var pickerView:  UIPickerView!
+    @IBOutlet weak var AzName:      UITextField!
+    @IBOutlet weak var AzAmount:    UITextField!
+    @IBOutlet weak var AzDate:      UIDatePicker!
+    @IBOutlet weak var Finish:      UIBarButtonItem!
+    var AzType:String?
+    
+    //▼初始化
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
+        
+        db.Init()
+        db.createDataBase()
+        
+        if db.openDatabase() {
+            let statement = db.fetch(table: "typeList", cond: "iId")
+            
+            fType.removeAll()
+            
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let n:String = String(cString: sqlite3_column_text(statement, 1))
+                fType.append(n)
+            }
+            
+            sqlite3_finalize(statement)
         }
+        
+        if gData == true {
+            let statement =  db.fetch(table: "iceBox", cond: "iName='\(gName!)'")
+            
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let n:String = String(cString: sqlite3_column_text(statement, 1))
+                let t:String = String(cString: sqlite3_column_text(statement, 2))
+                let a:Int    = Int(sqlite3_column_int(statement, 3))
+                let d:String = String(cString: sqlite3_column_text(statement, 4))
+                
+                var aC:Int = 0
+                
+                for aI in 0..<fType.count {
+                    print("\(aI)-\(fType[aI])")
+                    if fType[aI] == t {
+                        aC = aI
+                        break
+                    }
+                }
+                
+                let dateFormat = DateFormatter()
+                dateFormat.dateFormat = "yyyy-MM-dd"
+                
+                let date:Date = dateFormat.date(from: d)!
+                
+                self.title    = n
+                AzName.text   = n
+                AzAmount.text = "\(a)"
+                pickerView.selectRow(aC, inComponent: 0, animated: true)
+                AzDate.setDate(date, animated: true)
+                
+                AzName.isEnabled = false
+                
+                break
+            }
+            
+            sqlite3_finalize(statement)
+            
+            if (gDay! < 0) {
+                let uiAC     = UIAlertController(title: "系統訊息！", message: "該 \(gName!) 食材過期，請刪除．", preferredStyle: .alert)
+                let uiAA_del = UIAlertAction(title: "刪除", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+                    print("1")
+                    if self.db.openDatabase() {
+                        print("2")
+                        print("\(self.gName!)")
+                        self.db.deleteData(table: "iceBox", kv: ["iName", "\(self.gName!)"])
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                })
+                let uiAA_cl = UIAlertAction(title: "修改", style: UIAlertActionStyle.cancel, handler: nil)
+                
+                uiAC.addAction(uiAA_cl)
+                uiAC.addAction(uiAA_del)
+                
+                self.present(uiAC, animated: true, completion: nil)
+                
+                return
+            }
+            
+        } else {
+            self.Finish.title = "新增"
+        }
+    }
+    @IBAction func ClickBack(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+        return
+    }
+    @IBAction func ClickFinish(_ sender: UIBarButtonItem) {
+        if AzName.text!.isEmpty || AzAmount.text!.isEmpty {
+            ShowWarningWindow(title: "系統訊息！", message: "欄位不得空白．")
+            return
+        }
+        
+        if Int(AzAmount.text!)! <= 0 {
+            ShowWarningWindow(title: "系統訊息！", message: "請輸入有效的數量．")
+            return
+        }
+        
+        if db.openDatabase() == false {
+            ShowWarningWindow(title: "系統訊息！", message: "更新失敗，沒有使用資料庫．")
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if Finish.title == "新增" {
+            var checkName:Bool = false
+            
+            let statement =  db.fetch(table: "iceBox", cond: "iName='\(AzName.text!)'")
+            
+            while sqlite3_step(statement) == SQLITE_ROW {
+                checkName = true
+            }
+            
+            sqlite3_finalize(statement)
+            
+            if checkName {
+                ShowWarningWindow(title: "系統訊息！", message: "新增失敗，該食材已經有了．")
+                return
+            }
+            
+            db.addData(table: "iceBox", kv: ["iName", "\(AzName.text!)"], ["iCount", "\(AzAmount.text!)"], ["iType", "\(AzType)"], ["iDate", formatter.string(from: AzDate.date)])
+            ShowWarningWindow(title: "系統訊息！", message: "新增成功．", back: true)
+        } else {
+            db.updateData(table: "iceBox", kv: ["iName", "\(AzName.text!)"], kv2: ["iCount", "\(AzAmount.text!)"], ["iType", "\(AzType)"], ["iDate", formatter.string(from: AzDate.date)])
+            ShowWarningWindow(title: "系統訊息！", message: "更新成功．", back: true)
+        }
+        
+    }
     
-//▼UIPickerViewDataSource 必須實作的方法：
+    
+    func ShowWarningWindow(title:String, message:String, back:Bool = false)
+    {
+        let uiAC     = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        var uiAA_cl:UIAlertAction? = nil
+        
+        
+        if back {
+            uiAA_cl = UIAlertAction(title: "確定", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
+                
+            })
+        } else {
+            uiAA_cl = UIAlertAction(title: "確定", style: UIAlertActionStyle.cancel, handler: nil)
+        }
+        
+        uiAC.addAction(uiAA_cl!)
+        self.present(uiAC, animated: true, completion: nil)
+        
+    }
+    
+    // ▼UIPickerViewDataSource 必須實作的方法：
     // UIPickerView 有幾列可以選擇
     func numberOfComponentsInPickerView(
         pickerView: UIPickerView) -> Int {
@@ -32,24 +178,23 @@ class AddIngredientsTableViewController: UITableViewController, UIPickerViewDele
     // UIPickerView 各列有多少行資料
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int {
-        // 返回陣列 meals 的成員數量
-        return meals.count
+        // 返回陣列 fType 的成員數量
+        return fType.count
     }
     
     // UIPickerView 每個選項顯示的資料
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        // 設置為陣列 meals 的第 row 項資料
-        return meals[row]
+        // 設置為陣列 fType 的第 row 項資料
+        AzType = "\(fType[row])"
+
+        return fType[row]
     }
     
     // UIPickerView 改變選擇後執行的動作
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int, inComponent component: Int) {
-        // 將 UITextField 的值更新為陣列 meals 的第 row 項資料
-        //value?.text = meals[row]
+        AzType = "\(fType[row])"
     }
-//___UIPickerViewDataSource 必須實作的方法：
-
 }

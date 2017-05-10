@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4BD4831EC2BFE30093DFCF /* iceboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */; };
 		2C6133A61EBF16D000ED5BA3 /* CookRKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */; };
 		2C6133AC1EC002C200ED5BA3 /* MyCookBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */; };
 		2C6133AE1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AD1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift */; };
 		2C6133B41EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133B31EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift */; };
 		2C6133B61EC021E500ED5BA3 /* SeeCookBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133B51EC021E500ED5BA3 /* SeeCookBookTableViewController.swift */; };
+		2C6133D91EC184BA00ED5BA3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */; };
+		2C6133DD1EC1880500ED5BA3 /* DBManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133DC1EC1880500ED5BA3 /* DBManage.swift */; };
 		2C91532B1EB9E70600371521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91532A1EB9E70600371521 /* AppDelegate.swift */; };
 		2C91532D1EB9E70600371521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91532C1EB9E70600371521 /* ViewController.swift */; };
 		2C9153301EB9E70600371521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C91532E1EB9E70600371521 /* Main.storyboard */; };
@@ -27,11 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iceboxViewController.swift; sourceTree = "<group>"; };
 		2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookRKTableViewController.swift; sourceTree = "<group>"; };
 		2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBookTableViewController.swift; sourceTree = "<group>"; };
 		2C6133AD1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBookTableViewCell.swift; sourceTree = "<group>"; };
 		2C6133B31EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeCookBookTableViewCell.swift; sourceTree = "<group>"; };
 		2C6133B51EC021E500ED5BA3 /* SeeCookBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeCookBookTableViewController.swift; sourceTree = "<group>"; };
+		2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		2C6133DB1EC1854100ED5BA3 /* SQLHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLHeader.h; sourceTree = "<group>"; };
+		2C6133DC1EC1880500ED5BA3 /* DBManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManage.swift; sourceTree = "<group>"; };
 		2C9153271EB9E70600371521 /* IceboxAndCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceboxAndCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C91532A1EB9E70600371521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C91532C1EB9E70600371521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6133D91EC184BA00ED5BA3 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,11 +117,29 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		2C6133D71EC184BA00ED5BA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C6133DA1EC184E200ED5BA3 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				2C6133DB1EC1854100ED5BA3 /* SQLHeader.h */,
+				2C6133DC1EC1880500ED5BA3 /* DBManage.swift */,
+			);
+			name = SQLite;
+			sourceTree = "<group>";
+		};
 		2C91531E1EB9E70600371521 = {
 			isa = PBXGroup;
 			children = (
 				2C9153291EB9E70600371521 /* IceboxAndCookbook */,
 				2C9153281EB9E70600371521 /* Products */,
+				2C6133D71EC184BA00ED5BA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +154,7 @@
 		2C9153291EB9E70600371521 /* IceboxAndCookbook */ = {
 			isa = PBXGroup;
 			children = (
+				2C6133DA1EC184E200ED5BA3 /* SQLite */,
 				2C6133AF1EC0200400ED5BA3 /* 食譜閱讀 */,
 				2C6133A71EC0028000ED5BA3 /* 我的食譜 */,
 				2CA5EB091EBF143200D85CF5 /* 料理排名 */,
@@ -150,6 +177,7 @@
 				2C9153641EBB222A00371521 /* Controller */,
 				2CA5EAFE1EBD992D00D85CF5 /* 添加食材 */,
 				2C9153611EBB21DC00371521 /* Cell */,
+				2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */,
 			);
 			name = "我的冰箱";
 			sourceTree = "<group>";
@@ -329,6 +357,8 @@
 				2CA5EB081EBDA58D00D85CF5 /* RecommendCookTableViewController.swift in Sources */,
 				2C6133B41EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift in Sources */,
 				2C91532B1EB9E70600371521 /* AppDelegate.swift in Sources */,
+				2C6133DD1EC1880500ED5BA3 /* DBManage.swift in Sources */,
+				2C4BD4831EC2BFE30093DFCF /* iceboxViewController.swift in Sources */,
 				2C6133AC1EC002C200ED5BA3 /* MyCookBookTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.EatSoGood.IceboxAndCookbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = IceboxAndCookbook/SQLHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -468,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.EatSoGood.IceboxAndCookbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = IceboxAndCookbook/SQLHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

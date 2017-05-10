@@ -30,11 +30,11 @@ class MyCookBookTableViewController: UITableViewController {
     
     //▼顯示 row
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendCookTableViewCell", for: indexPath) as! RecommendCookTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCookBookTableViewCell", for: indexPath) as! MyCookBookTableViewCell
         
-        cell.RName.text = "\(testName[indexPath.row])"
-        cell.RLike.text = "❤️：\(testLike[indexPath.row])"
-        cell.RWatch.text = "👁‍🗨：\(testWatch[indexPath.row])"
+        cell.MName.text = "\(testName[indexPath.row])"
+        cell.MLike.text = "❤️：\(testLike[indexPath.row])"
+        cell.MWatch.text = "👁‍🗨：\(testWatch[indexPath.row])"
         
         return cell
     }
