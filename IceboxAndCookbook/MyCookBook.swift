@@ -1,14 +1,12 @@
 //
-//  MyCookBookTableViewController.swift
+//  MyCookBook.swift
+//  我的食譜 顯示
 //  IceboxAndCookbook
-//
-//  Created by Mrosstro on 2017/5/8.
-//  Copyright © 2017年 Mrosstro. All rights reserved.
-//
+
 
 import UIKit
 
-class MyCookBookTableViewController: UITableViewController {
+class MyCookBook: UITableViewController {
 
     //▼範例用
     var testName: [String] = ["番茄義大利麵","豬肉水餃","貢丸湯","羊肉爐"]

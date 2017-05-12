@@ -11,15 +11,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--首頁-->
+        <!--首頁_版-->
         <scene sceneID="sx2-2P-VB1">
             <objects>
-                <viewController id="Je9-VO-BW9" userLabel="首頁" sceneMemberID="viewController">
+                <viewController id="Je9-VO-BW9" userLabel="首頁_版" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TyI-76-zVU"/>
                         <viewControllerLayoutGuide type="bottom" id="4Ns-Sl-gdg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Uk-wx-3Fe" customClass="test" customModule="IceboxAndCookbook" customModuleProvider="target">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="2Uk-wx-3Fe" customClass="test" customModule="IceboxAndCookbook" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -45,6 +45,7 @@
                                 <rect key="frame" x="51" y="79" width="272" height="338"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mP2-5L-rnr" firstAttribute="leading" secondItem="2Uk-wx-3Fe" secondAttribute="leading" id="3oc-zg-kWf"/>
                             <constraint firstAttribute="trailing" secondItem="mP2-5L-rnr" secondAttribute="trailing" id="BC8-XL-3iK"/>
@@ -59,12 +60,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaM-dX-dEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="-67"/>
+            <point key="canvasLocation" x="-962" y="779"/>
         </scene>
-        <!--我的冰箱_title-->
+        <!--我的冰箱_Navigation-->
         <scene sceneID="Jax-yC-w6i">
             <objects>
-                <navigationController storyboardIdentifier="aa" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="el6-dc-cm4" userLabel="我的冰箱_title" customClass="iceboxViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="aa" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="el6-dc-cm4" userLabel="我的冰箱_Navigation" customClass="iceboxViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的冰箱" image="我的冰箱" selectedImage="我的冰箱" id="ycN-R8-ngL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="4Ng-ND-U03">
@@ -84,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="681" y="1545"/>
         </scene>
-        <!--我的冰箱_TableViewController-->
+        <!--我的冰箱_版-->
         <scene sceneID="MHJ-yE-Lq7">
             <objects>
-                <tableViewController storyboardIdentifier="bb" useStoryboardIdentifierAsRestorationIdentifier="YES" id="03Y-UZ-x6n" userLabel="我的冰箱_TableViewController" customClass="MyiceboxTableViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="bb" useStoryboardIdentifierAsRestorationIdentifier="YES" id="03Y-UZ-x6n" userLabel="我的冰箱_版" customClass="Myicebox" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="3q3-Wz-XQw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1436" y="1545"/>
         </scene>
-        <!--推薦食譜-->
+        <!--推薦食譜_Navigation-->
         <scene sceneID="wxb-AS-pjo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gmv-tu-EGF" userLabel="推薦食譜" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gmv-tu-EGF" userLabel="推薦食譜_Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="推薦食譜" image="推薦食譜" selectedImage="推薦食譜" id="Bst-Qr-hK1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Kgg-yP-2B7">
@@ -192,10 +193,10 @@
             </objects>
             <point key="canvasLocation" x="657" y="-806"/>
         </scene>
-        <!--添加食材_Table View Controller-->
+        <!--添加食材_版-->
         <scene sceneID="hWH-0y-nuV">
             <objects>
-                <tableViewController id="eX6-py-tpc" userLabel="添加食材_Table View Controller" customClass="AddIngredientsTableViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="eX6-py-tpc" userLabel="添加食材_版" customClass="AddIngredients" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="otV-sl-geo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,10 +361,10 @@
             </objects>
             <point key="canvasLocation" x="2217" y="1545"/>
         </scene>
-        <!--推薦食譜_TableViewController-->
+        <!--推薦食譜_版-->
         <scene sceneID="tmy-xf-gdY">
             <objects>
-                <tableViewController id="4wv-Ay-0LT" userLabel="推薦食譜_TableViewController" customClass="RecommendCookTableViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="4wv-Ay-0LT" userLabel="推薦食譜_版" customClass="RecommendCook" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iuo-dk-k1X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -480,10 +481,10 @@
             </objects>
             <point key="canvasLocation" x="1449" y="-806"/>
         </scene>
-        <!--涼拌小黃瓜-->
+        <!--閱讀食譜_版-->
         <scene sceneID="vKa-Ll-knD">
             <objects>
-                <viewController id="FA3-oM-cbG" customClass="SeeViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="FA3-oM-cbG" userLabel="閱讀食譜_版" customClass="SeeViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BRe-ig-i3J"/>
                         <viewControllerLayoutGuide type="bottom" id="w3X-Qf-gqn"/>
@@ -550,7 +551,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="涼拌小黃瓜" id="oJf-XN-8PV">
+                    <navigationItem key="navigationItem" title="閱讀食譜" id="oJf-XN-8PV">
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="mdW-Oj-y9Z">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -559,6 +560,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="愛心" id="X6A-xX-RFy">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="ClickLike:" destination="FA3-oM-cbG" id="NTa-Ja-3pU"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -576,12 +580,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2230" y="-38"/>
+            <point key="canvasLocation" x="2217" y="-47"/>
         </scene>
-        <!--食譜排名-->
+        <!--食譜排名_Navigation-->
         <scene sceneID="QF0-Qa-w32">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dVF-O2-snV" userLabel="食譜排名" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dVF-O2-snV" userLabel="食譜排名_Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="食譜排名" image="皇冠_32" id="c14-MO-zM8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="1Ni-vZ-WFa">
@@ -601,10 +605,10 @@
             </objects>
             <point key="canvasLocation" x="657" y="-67"/>
         </scene>
-        <!--食譜排名_TableViewController-->
+        <!--食譜排名_版-->
         <scene sceneID="k1r-qX-yFl">
             <objects>
-                <tableViewController id="sfj-tG-HZq" userLabel="食譜排名_TableViewController" customClass="CookRKTableViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="sfj-tG-HZq" userLabel="食譜排名_版" customClass="CookRK" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="IzP-cG-uS7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -719,16 +723,20 @@
                             <outlet property="delegate" destination="sfj-tG-HZq" id="xcq-fy-hEO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="食譜排名" id="itu-Jo-2Ak" userLabel="食譜排名_title"/>
+                    <navigationItem key="navigationItem" title="食譜排名" id="itu-Jo-2Ak" userLabel="食譜排名_title">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="RmM-pM-WtC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4q8-s9-YCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1449" y="-67"/>
         </scene>
-        <!--我的食譜-->
+        <!--我的食譜_Navigation-->
         <scene sceneID="4DP-Yy-dwu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VJm-bk-M0P" userLabel="我的食譜" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VJm-bk-M0P" userLabel="我的食譜_Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的食譜" image="愛心" id="wUY-Be-0UI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Mkd-C5-moo">
@@ -748,10 +756,10 @@
             </objects>
             <point key="canvasLocation" x="657" y="779"/>
         </scene>
-        <!--我的食譜-->
+        <!--我的食譜_版-->
         <scene sceneID="7J2-BA-sHH">
             <objects>
-                <tableViewController id="pIO-TO-HCZ" userLabel="我的食譜" customClass="MyCookBookTableViewController" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pIO-TO-HCZ" userLabel="我的食譜_版" customClass="MyCookBook" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="94r-GT-yn5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -864,10 +872,10 @@
             </objects>
             <point key="canvasLocation" x="1449" y="779"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--首頁_TabBarController-->
         <scene sceneID="Rko-19-6ZD">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="V97-0E-3fI" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="V97-0E-3fI" userLabel="首頁_TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="4cW-Y1-UTy">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -885,10 +893,10 @@
             </objects>
             <point key="canvasLocation" x="-132" y="780"/>
         </scene>
-        <!--新增食譜-->
+        <!--新增食譜_版-->
         <scene sceneID="zTk-p3-GeL">
             <objects>
-                <tableViewController id="6oE-d2-450" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="6oE-d2-450" userLabel="新增食譜_版" customClass="AddCookBook" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WkS-qp-zJE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -911,7 +919,7 @@
                                                         <color key="titleColor" red="1" green="0.31684204030000002" blue="0.25517776190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-eT-ALO">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-eT-ALO" userLabel="ACImage">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -925,22 +933,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名  稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSk-2l-Slb">
-                                                    <rect key="frame" x="27" y="11" width="46" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名  稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSk-2l-Slb">
+                                                    <rect key="frame" x="27" y="11" width="43.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="範例：貢丸湯" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOh-qi-Pwq">
-                                                    <rect key="frame" x="87" y="6" width="270" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="範例：貢丸湯" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOh-qi-Pwq">
+                                                    <rect key="frame" x="84.5" y="6" width="272.5" height="30"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xSk-2l-Slb" firstAttribute="top" secondItem="iD9-fg-sng" secondAttribute="topMargin" constant="3" id="6el-l8-q0L"/>
+                                                <constraint firstItem="xSk-2l-Slb" firstAttribute="leading" secondItem="iD9-fg-sng" secondAttribute="leadingMargin" constant="19" id="6oH-WZ-RGy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xSk-2l-Slb" secondAttribute="bottom" constant="4" id="A3a-Ue-Qgp"/>
+                                                <constraint firstAttribute="trailing" secondItem="hOh-qi-Pwq" secondAttribute="trailing" constant="18" id="D0q-yR-5Qj"/>
+                                                <constraint firstAttribute="bottom" secondItem="hOh-qi-Pwq" secondAttribute="bottom" constant="8" id="Ywt-Yv-VZ7"/>
+                                                <constraint firstItem="hOh-qi-Pwq" firstAttribute="leading" secondItem="xSk-2l-Slb" secondAttribute="trailing" constant="14" id="dzH-pf-1n1"/>
+                                                <constraint firstItem="xSk-2l-Slb" firstAttribute="top" secondItem="iD9-fg-sng" secondAttribute="topMargin" constant="3" id="qea-S3-tJr"/>
+                                                <constraint firstItem="hOh-qi-Pwq" firstAttribute="top" secondItem="iD9-fg-sng" secondAttribute="top" constant="6" id="qvb-Uy-gIF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xSk-2l-Slb" secondAttribute="bottom" constant="4" id="sKO-jr-Msh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Pj3-z0-g7V">
@@ -950,16 +967,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食  材" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-HB-ZZM">
-                                                    <rect key="frame" x="27" y="12" width="46" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食  材" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-HB-ZZM">
+                                                    <rect key="frame" x="27" y="12" width="43.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="z12-WQ-90V">
-                                                    <rect key="frame" x="88" y="12" width="266" height="110"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="z12-WQ-90V">
+                                                    <rect key="frame" x="84.5" y="14" width="264.5" height="115.5"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <string key="text">範例：
 牛奶  300克
@@ -968,6 +983,15 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="z12-WQ-90V" secondAttribute="trailing" constant="18" id="27q-T6-Zzl"/>
+                                                <constraint firstItem="z12-WQ-90V" firstAttribute="leading" secondItem="CxZ-HB-ZZM" secondAttribute="trailing" constant="14" id="BXq-Y3-tvx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CxZ-HB-ZZM" secondAttribute="bottom" constant="89" id="CQN-xV-Bb4"/>
+                                                <constraint firstItem="z12-WQ-90V" firstAttribute="bottom" secondItem="86H-Nn-BSX" secondAttribute="bottomMargin" constant="8" id="Hf2-Wb-tN1"/>
+                                                <constraint firstItem="z12-WQ-90V" firstAttribute="top" secondItem="86H-Nn-BSX" secondAttribute="topMargin" constant="6" id="HzD-oQ-zjM"/>
+                                                <constraint firstItem="CxZ-HB-ZZM" firstAttribute="top" secondItem="86H-Nn-BSX" secondAttribute="topMargin" constant="4" id="OVK-1u-lD5"/>
+                                                <constraint firstItem="CxZ-HB-ZZM" firstAttribute="leading" secondItem="86H-Nn-BSX" secondAttribute="leadingMargin" constant="19" id="RD9-QK-oeo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="NC0-rG-w7O">
@@ -977,21 +1001,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="步  驟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URr-i2-IrU">
-                                                    <rect key="frame" x="26" y="12" width="46" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="步  驟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URr-i2-IrU">
+                                                    <rect key="frame" x="26" y="12" width="43.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="範例： 步驟 1     準備xx將xx切碎掉" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WYq-Yk-z0z">
-                                                    <rect key="frame" x="88" y="11" width="265" height="110"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="範例： 步驟 1     準備xx將xx切碎掉" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WYq-Yk-z0z">
+                                                    <rect key="frame" x="83.5" y="14" width="265.5" height="99.5"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="URr-i2-IrU" firstAttribute="top" secondItem="cdE-zM-MTc" secondAttribute="topMargin" constant="4" id="7tE-xu-bhM"/>
+                                                <constraint firstItem="WYq-Yk-z0z" firstAttribute="leading" secondItem="URr-i2-IrU" secondAttribute="trailing" constant="14" id="7th-SP-9td"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="URr-i2-IrU" secondAttribute="bottom" constant="89" id="Mjb-cF-x2w"/>
+                                                <constraint firstItem="URr-i2-IrU" firstAttribute="leading" secondItem="cdE-zM-MTc" secondAttribute="leadingMargin" constant="18" id="Qi5-LM-ura"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WYq-Yk-z0z" secondAttribute="trailing" constant="18" id="d4c-kS-zDl"/>
+                                                <constraint firstItem="WYq-Yk-z0z" firstAttribute="top" secondItem="cdE-zM-MTc" secondAttribute="topMargin" constant="6" id="yoW-Jd-sT7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="WYq-Yk-z0z" secondAttribute="bottom" constant="8" id="zVc-A3-oB0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1003,17 +1034,29 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="新增食譜" id="tby-V1-hsR">
-                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="aDg-N2-Iuv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="aDg-N2-Iuv" userLabel="Back">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="ClickBack:" destination="6oE-d2-450" id="T3t-uq-VqR"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="完  成" id="kAw-Mz-LhX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="ClickFinish:" destination="6oE-d2-450" id="4t9-N4-K9U"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ACImage" destination="vEx-eT-ALO" id="OUK-2w-AiN"/>
+                        <outlet property="ACIngredients" destination="z12-WQ-90V" id="5jP-Vh-mOY"/>
+                        <outlet property="ACName" destination="hOh-qi-Pwq" id="RnE-Mj-aZw"/>
+                        <outlet property="ACStep" destination="WYq-Yk-z0z" id="EmC-AP-DHU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCl-E9-1xR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="794"/>
+            <point key="canvasLocation" x="2258" y="796"/>
         </scene>
     </scenes>
     <resources>

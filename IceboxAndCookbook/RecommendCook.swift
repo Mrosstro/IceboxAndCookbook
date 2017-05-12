@@ -1,16 +1,13 @@
 //
-//  RecommendCookTableViewController.swift
+//  RecommendCook.swift
+//  推薦食譜
 //  IceboxAndCookbook
-//
-//  Created by Mrosstro on 2017/5/6.
-//  Copyright © 2017年 Mrosstro. All rights reserved.
-//
 
 //注意！！，cell的Identifier是否有打錯，cell是否有連結正確，class是否有連結
 
 import UIKit
 
-class RecommendCookTableViewController: UITableViewController {
+class RecommendCook: UITableViewController {
     let db = DBManage()     // 呼叫資料庫
     
     var iName:[String] = [] // 食材名稱
@@ -21,6 +18,57 @@ class RecommendCookTableViewController: UITableViewController {
     var testName: [String] = ["番茄義大利麵","豬肉水餃","貢丸湯","羊肉爐"]
     var testLike: [String] = ["1000","3000","5000","3000"]
     var testWatch: [String] = ["10000","50000","30000","20000"]
+    
+    //▼刷新頁面
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        db.Init()
+        
+        if db.openDatabase() {
+            var statement  = db.fetch(table: "iceBox", cond: "iId")
+            var sql:String = ""
+            var a:[String] = []
+            
+            a.removeAll()
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let n:String = String(cString: sqlite3_column_text(statement, 1))
+                a.append(n)
+            }
+            
+            sqlite3_finalize(statement)
+            
+            for i in 0..<a.count {
+                sql = sql + "iRequire like'%\(a[i])%'"
+                sql = sql + ((i == (a.count-1)) ? "" : " OR ")
+            }
+            
+            print(sql)
+            
+            iName.removeAll()
+            iLove.removeAll()
+            iView.removeAll()
+            
+            statement =  db.fetch(table: "recipeList", cond: sql)
+            
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let n:String = String(cString: sqlite3_column_text(statement, 2))
+                let l:Int    = Int(sqlite3_column_int(statement, 4))
+                let v:Int    = Int(sqlite3_column_int(statement, 5))
+                iName.append(n)
+                iLove.append(l)
+                iView.append(v)
+            }
+            
+            sqlite3_finalize(statement)
+            
+            db.closeDatabase()
+            
+            tableView.reloadData()
+        }
+        
+    }
     
     //▼初始化
     override func viewDidLoad() {

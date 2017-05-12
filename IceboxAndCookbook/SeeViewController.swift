@@ -19,6 +19,12 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var SImage: UIImageView!
 
+    //▼喜歡
+    @IBAction func ClickLike(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    //▼返回上一頁
     @IBAction func ClickBack(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }

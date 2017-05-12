@@ -1,6 +1,13 @@
+//
+//  AddIngredients.swift
+//  添加食材
+//  IceboxAndCookbook
+
+//  注意！！，cell的Identifier是否有打錯，cell是否有連結正確，class是否有連結
+
 import UIKit
 
-class AddIngredientsTableViewController: UITableViewController, UIPickerViewDelegate {
+class AddIngredients: UITableViewController, UIPickerViewDelegate {
     var db = DBManage()
     var fType:[String] = []
     
@@ -8,7 +15,7 @@ class AddIngredientsTableViewController: UITableViewController, UIPickerViewDele
     var gName:String?
     var gDay:Int?
     
-    //▼宣告pickerView
+    //▼宣告
     @IBOutlet weak var pickerView:  UIPickerView!
     @IBOutlet weak var AzName:      UITextField!
     @IBOutlet weak var AzAmount:    UITextField!
@@ -99,10 +106,12 @@ class AddIngredientsTableViewController: UITableViewController, UIPickerViewDele
             self.Finish.title = "新增"
         }
     }
+    //▼返回上一頁
     @IBAction func ClickBack(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
         return
     }
+    //▼完成
     @IBAction func ClickFinish(_ sender: UIBarButtonItem) {
         if AzName.text!.isEmpty || AzAmount.text!.isEmpty {
             ShowWarningWindow(title: "系統訊息！", message: "欄位不得空白．")

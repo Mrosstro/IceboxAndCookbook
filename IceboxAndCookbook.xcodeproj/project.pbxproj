@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C4BD4831EC2BFE30093DFCF /* iceboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */; };
+		2C21E5ED1EC57D8D002F31D4 /* AddCookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21E5EC1EC57D8D002F31D4 /* AddCookBook.swift */; };
 		2C4BD4871EC3119C0093DFCF /* SeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */; };
-		2C6133A61EBF16D000ED5BA3 /* CookRKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */; };
-		2C6133AC1EC002C200ED5BA3 /* MyCookBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */; };
+		2C6133A61EBF16D000ED5BA3 /* CookRK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133A51EBF16D000ED5BA3 /* CookRK.swift */; };
+		2C6133AC1EC002C200ED5BA3 /* MyCookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AB1EC002C200ED5BA3 /* MyCookBook.swift */; };
 		2C6133AE1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AD1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift */; };
 		2C6133B41EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133B31EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift */; };
 		2C6133D91EC184BA00ED5BA3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */; };
@@ -20,19 +20,19 @@
 		2C9153321EB9E70600371521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9153311EB9E70600371521 /* Assets.xcassets */; };
 		2C9153351EB9E70600371521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9153331EB9E70600371521 /* LaunchScreen.storyboard */; };
 		2C9153601EBB20E000371521 /* MyiceboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91535F1EBB20E000371521 /* MyiceboxTableViewCell.swift */; };
-		2C9153631EBB221600371521 /* MyiceboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9153621EBB221600371521 /* MyiceboxTableViewController.swift */; };
+		2C9153631EBB221600371521 /* Myicebox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9153621EBB221600371521 /* Myicebox.swift */; };
 		2CA5EAFD1EBD917200D85CF5 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EAFC1EBD917200D85CF5 /* testViewController.swift */; };
-		2CA5EB001EBD99AA00D85CF5 /* AddIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EAFF1EBD99AA00D85CF5 /* AddIngredientsTableViewController.swift */; };
+		2CA5EB001EBD99AA00D85CF5 /* AddIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EAFF1EBD99AA00D85CF5 /* AddIngredients.swift */; };
 		2CA5EB041EBDA30F00D85CF5 /* RecommendCookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EB031EBDA30F00D85CF5 /* RecommendCookTableViewCell.swift */; };
-		2CA5EB081EBDA58D00D85CF5 /* RecommendCookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EB071EBDA58D00D85CF5 /* RecommendCookTableViewController.swift */; };
+		2CA5EB081EBDA58D00D85CF5 /* RecommendCook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EB071EBDA58D00D85CF5 /* RecommendCook.swift */; };
 		2CA5EB0D1EBF149900D85CF5 /* CookRKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5EB0C1EBF149900D85CF5 /* CookRKTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iceboxViewController.swift; sourceTree = "<group>"; };
+		2C21E5EC1EC57D8D002F31D4 /* AddCookBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCookBook.swift; sourceTree = "<group>"; };
 		2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViewController.swift; sourceTree = "<group>"; };
-		2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookRKTableViewController.swift; sourceTree = "<group>"; };
-		2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBookTableViewController.swift; sourceTree = "<group>"; };
+		2C6133A51EBF16D000ED5BA3 /* CookRK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookRK.swift; sourceTree = "<group>"; };
+		2C6133AB1EC002C200ED5BA3 /* MyCookBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBook.swift; sourceTree = "<group>"; };
 		2C6133AD1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBookTableViewCell.swift; sourceTree = "<group>"; };
 		2C6133B31EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeCookBookTableViewCell.swift; sourceTree = "<group>"; };
 		2C6133D81EC184BA00ED5BA3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -45,11 +45,11 @@
 		2C9153341EB9E70600371521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C9153361EB9E70600371521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C91535F1EBB20E000371521 /* MyiceboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyiceboxTableViewCell.swift; sourceTree = "<group>"; };
-		2C9153621EBB221600371521 /* MyiceboxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyiceboxTableViewController.swift; sourceTree = "<group>"; };
+		2C9153621EBB221600371521 /* Myicebox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Myicebox.swift; sourceTree = "<group>"; };
 		2CA5EAFC1EBD917200D85CF5 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		2CA5EAFF1EBD99AA00D85CF5 /* AddIngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientsTableViewController.swift; sourceTree = "<group>"; };
+		2CA5EAFF1EBD99AA00D85CF5 /* AddIngredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredients.swift; sourceTree = "<group>"; };
 		2CA5EB031EBDA30F00D85CF5 /* RecommendCookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCookTableViewCell.swift; sourceTree = "<group>"; };
-		2CA5EB071EBDA58D00D85CF5 /* RecommendCookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCookTableViewController.swift; sourceTree = "<group>"; };
+		2CA5EB071EBDA58D00D85CF5 /* RecommendCook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCook.swift; sourceTree = "<group>"; };
 		2CA5EB0C1EBF149900D85CF5 /* CookRKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookRKTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,19 +73,28 @@
 			name = "雜物";
 			sourceTree = "<group>";
 		};
-		2C6133A71EC0028000ED5BA3 /* 我的食譜 */ = {
+		2C21E5EB1EC57CAE002F31D4 /* 新增食譜AC */ = {
 			isa = PBXGroup;
 			children = (
+				2C21E5EC1EC57D8D002F31D4 /* AddCookBook.swift */,
+			);
+			name = "新增食譜AC";
+			sourceTree = "<group>";
+		};
+		2C6133A71EC0028000ED5BA3 /* 我的食譜M */ = {
+			isa = PBXGroup;
+			children = (
+				2C21E5EB1EC57CAE002F31D4 /* 新增食譜AC */,
 				2C6133A81EC0029600ED5BA3 /* Controller */,
 				2C6133A91EC002A400ED5BA3 /* Cell */,
 			);
-			name = "我的食譜";
+			name = "我的食譜M";
 			sourceTree = "<group>";
 		};
 		2C6133A81EC0029600ED5BA3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2C6133AB1EC002C200ED5BA3 /* MyCookBookTableViewController.swift */,
+				2C6133AB1EC002C200ED5BA3 /* MyCookBook.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -98,13 +107,13 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
-		2C6133AF1EC0200400ED5BA3 /* 食譜閱讀 */ = {
+		2C6133AF1EC0200400ED5BA3 /* 食譜閱讀S */ = {
 			isa = PBXGroup;
 			children = (
 				2C6133B01EC0201200ED5BA3 /* Controller */,
 				2C6133B11EC0201D00ED5BA3 /* Cell */,
 			);
-			name = "食譜閱讀";
+			name = "食譜閱讀S";
 			sourceTree = "<group>";
 		};
 		2C6133B01EC0201200ED5BA3 /* Controller */ = {
@@ -162,12 +171,12 @@
 			children = (
 				2C21E5E91EC57AFB002F31D4 /* 雜物 */,
 				2C6133DA1EC184E200ED5BA3 /* SQLite */,
-				2C6133AF1EC0200400ED5BA3 /* 食譜閱讀 */,
-				2C6133A71EC0028000ED5BA3 /* 我的食譜 */,
-				2CA5EB091EBF143200D85CF5 /* 料理排名 */,
-				2CA5EB021EBDA2F400D85CF5 /* 推薦食譜 */,
+				2C6133AF1EC0200400ED5BA3 /* 食譜閱讀S */,
+				2C6133A71EC0028000ED5BA3 /* 我的食譜M */,
+				2CA5EB091EBF143200D85CF5 /* 料理排名C */,
+				2CA5EB021EBDA2F400D85CF5 /* 推薦食譜R */,
 				2CA5EAFB1EBD914B00D85CF5 /* 測試用 */,
-				2C91535E1EBB20A500371521 /* 我的冰箱 */,
+				2C91535E1EBB20A500371521 /* 我的冰箱i */,
 				2C91532E1EB9E70600371521 /* Main.storyboard */,
 				2C9153311EB9E70600371521 /* Assets.xcassets */,
 				2C9153331EB9E70600371521 /* LaunchScreen.storyboard */,
@@ -176,15 +185,14 @@
 			path = IceboxAndCookbook;
 			sourceTree = "<group>";
 		};
-		2C91535E1EBB20A500371521 /* 我的冰箱 */ = {
+		2C91535E1EBB20A500371521 /* 我的冰箱i */ = {
 			isa = PBXGroup;
 			children = (
 				2C9153641EBB222A00371521 /* Controller */,
 				2CA5EAFE1EBD992D00D85CF5 /* 添加食材 */,
 				2C9153611EBB21DC00371521 /* Cell */,
-				2C4BD4821EC2BFE30093DFCF /* iceboxViewController.swift */,
 			);
-			name = "我的冰箱";
+			name = "我的冰箱i";
 			sourceTree = "<group>";
 		};
 		2C9153611EBB21DC00371521 /* Cell */ = {
@@ -198,7 +206,7 @@
 		2C9153641EBB222A00371521 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2C9153621EBB221600371521 /* MyiceboxTableViewController.swift */,
+				2C9153621EBB221600371521 /* Myicebox.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -222,18 +230,18 @@
 		2CA5EB011EBDA00D00D85CF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CA5EAFF1EBD99AA00D85CF5 /* AddIngredientsTableViewController.swift */,
+				2CA5EAFF1EBD99AA00D85CF5 /* AddIngredients.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		2CA5EB021EBDA2F400D85CF5 /* 推薦食譜 */ = {
+		2CA5EB021EBDA2F400D85CF5 /* 推薦食譜R */ = {
 			isa = PBXGroup;
 			children = (
 				2CA5EB061EBDA31C00D85CF5 /* Controller */,
 				2CA5EB051EBDA31300D85CF5 /* Cell */,
 			);
-			name = "推薦食譜";
+			name = "推薦食譜R";
 			sourceTree = "<group>";
 		};
 		2CA5EB051EBDA31300D85CF5 /* Cell */ = {
@@ -247,24 +255,24 @@
 		2CA5EB061EBDA31C00D85CF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CA5EB071EBDA58D00D85CF5 /* RecommendCookTableViewController.swift */,
+				2CA5EB071EBDA58D00D85CF5 /* RecommendCook.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		2CA5EB091EBF143200D85CF5 /* 料理排名 */ = {
+		2CA5EB091EBF143200D85CF5 /* 料理排名C */ = {
 			isa = PBXGroup;
 			children = (
 				2CA5EB0A1EBF145600D85CF5 /* Controller */,
 				2CA5EB0B1EBF146600D85CF5 /* Cell */,
 			);
-			name = "料理排名";
+			name = "料理排名C";
 			sourceTree = "<group>";
 		};
 		2CA5EB0A1EBF145600D85CF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2C6133A51EBF16D000ED5BA3 /* CookRKTableViewController.swift */,
+				2C6133A51EBF16D000ED5BA3 /* CookRK.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -349,21 +357,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CA5EB001EBD99AA00D85CF5 /* AddIngredientsTableViewController.swift in Sources */,
+				2CA5EB001EBD99AA00D85CF5 /* AddIngredients.swift in Sources */,
 				2CA5EB041EBDA30F00D85CF5 /* RecommendCookTableViewCell.swift in Sources */,
-				2C9153631EBB221600371521 /* MyiceboxTableViewController.swift in Sources */,
+				2C9153631EBB221600371521 /* Myicebox.swift in Sources */,
 				2C9153601EBB20E000371521 /* MyiceboxTableViewCell.swift in Sources */,
 				2C4BD4871EC3119C0093DFCF /* SeeViewController.swift in Sources */,
 				2CA5EAFD1EBD917200D85CF5 /* testViewController.swift in Sources */,
-				2C6133A61EBF16D000ED5BA3 /* CookRKTableViewController.swift in Sources */,
+				2C6133A61EBF16D000ED5BA3 /* CookRK.swift in Sources */,
 				2CA5EB0D1EBF149900D85CF5 /* CookRKTableViewCell.swift in Sources */,
 				2C6133AE1EC002D300ED5BA3 /* MyCookBookTableViewCell.swift in Sources */,
-				2CA5EB081EBDA58D00D85CF5 /* RecommendCookTableViewController.swift in Sources */,
+				2CA5EB081EBDA58D00D85CF5 /* RecommendCook.swift in Sources */,
 				2C6133B41EC0206500ED5BA3 /* SeeCookBookTableViewCell.swift in Sources */,
 				2C91532B1EB9E70600371521 /* AppDelegate.swift in Sources */,
+				2C21E5ED1EC57D8D002F31D4 /* AddCookBook.swift in Sources */,
 				2C6133DD1EC1880500ED5BA3 /* DBManage.swift in Sources */,
-				2C4BD4831EC2BFE30093DFCF /* iceboxViewController.swift in Sources */,
-				2C6133AC1EC002C200ED5BA3 /* MyCookBookTableViewController.swift in Sources */,
+				2C6133AC1EC002C200ED5BA3 /* MyCookBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

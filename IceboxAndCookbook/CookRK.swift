@@ -1,14 +1,12 @@
 //
 //  CookRKTableViewController.swift
+//  料理排名
 //  IceboxAndCookbook
-//
-//  Created by Mrosstro on 2017/5/7.
-//  Copyright © 2017年 Mrosstro. All rights reserved.
-//
+
 
 import UIKit
 
-class CookRKTableViewController: UITableViewController {
+class CookRK: UITableViewController {
 
     //▼範例用
     var testRK: [String] = ["1","2","3","4"]
