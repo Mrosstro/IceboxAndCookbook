@@ -9,7 +9,15 @@
 import UIKit
 
 class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    let db = DBManage()
+    var statement:OpaquePointer? = nil
+    
+    var gData:Bool = false
+    var gName:String?
+    
+    var checkLove:Bool = true
+    @IBOutlet weak var iLike: UIBarButtonItem!
+    
     //▼範例用
     var testimage: String = "image小黃瓜"
     var testName: String = "涼拌小黃瓜"
@@ -21,7 +29,29 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     //▼喜歡
     @IBAction func ClickLike(_ sender: UIBarButtonItem) {
+        db.Init()
         
+        if db.openDatabase() {
+            statement =  db.fetch(table: "myRecipe", cond: "mRecipe='\(testName)'")
+            checkLove = true;
+            
+            while sqlite3_step(statement) == SQLITE_ROW {
+                checkLove = false
+            }
+            sqlite3_finalize(statement)
+            
+            print(checkLove)
+            
+            if checkLove {
+                iLike.image = UIImage(named: "愛心")
+                db.deleteData(table: "myRecipe", kv: ["mRecipe", "\(testName)"])
+            } else {
+                iLike.image = UIImage(named: "愛心(滿)")
+                db.addData(table: "myRecipe", kv: ["mRecipe", "\(testName)"])
+            }
+            
+            db.closeDatabase()
+        }
     }
     
     //▼返回上一頁
@@ -33,21 +63,64 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         SImage.image = UIImage(named: testimage)
+        
+        db.Init()
+        
+        if db.openDatabase() {
+            if gData == true {
+                statement =  db.fetch(table: "recipeList", cond: "rName='\(gName!)'")
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    //let n:String = String(cString: sqlite3_column_text(statement, 1))
+                    let _name:String    = String(cString: sqlite3_column_text(statement, 2))
+                    let _require:String = String(cString: sqlite3_column_text(statement, 3))
+                    let _desc:String    = String(cString: sqlite3_column_text(statement, 4))
+                    
+                    testName = _name
+                    testIngredients = _require
+                    testDescription = _desc
+                    
+                    break
+                }
+                
+                sqlite3_finalize(statement)
+                
+                
+                
+                
+                statement =  db.fetch(table: "myRecipe", cond: "mRecipe='\(gName!)'")
+                checkLove = true;
+                
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    checkLove = false
+                }
+                sqlite3_finalize(statement)
+                
+                if checkLove {
+                    iLike.image = UIImage(named: "愛心(滿)")
+                }
+            }
+            
+            db.closeDatabase()
+        }
+        
+        iLike.image = UIImage(named: "愛心_滿")
     }
     
     //▼替換文字
     func CharacterChange(ChangeText: String) -> String {
         var finishChangeText: String
         finishChangeText = ChangeText.replacingOccurrences(of: ",", with: "\n")
+        
         return finishChangeText
     }
     
     //▼有幾組 row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         tableView.estimatedRowHeight = 36
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight          = UITableViewAutomaticDimension
+        
         return 3
     }
     
@@ -55,32 +128,28 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SeeCookBookTableViewCell", for: indexPath) as! SeeCookBookTableViewCell
         
-        
         switch indexPath.row {
-        case 0:
-            print("準備名稱")
-            print(indexPath.row)
-            cell.SField.text = "名稱"
-            cell.SValue.text = testName
-            print("完成名稱")
-            print(indexPath.row)
-        case 1:
-            print("準備食材")
-            cell.SField.text = "食材"
-            testIngredients = CharacterChange(ChangeText: testIngredients)
-            cell.SValue.text = testIngredients
-            print("完成食材")
-        case 2:
-            cell.SField.text = "做法"
-            cell.SValue.text = testDescription
-        default:
-            cell.SField.text = ""
-            cell.SValue.text = ""
-            
-            
+            case 0:
+                print("準備名稱")
+                print(indexPath.row)
+                cell.SField.text = "名稱"
+                cell.SValue.text = testName
+                print("完成名稱")
+                print(indexPath.row)
+            case 1:
+                print("準備食材")
+                cell.SField.text = "食材"
+                testIngredients = CharacterChange(ChangeText: testIngredients)
+                cell.SValue.text = testIngredients
+                print("完成食材")
+            case 2:
+                cell.SField.text = "做法"
+                cell.SValue.text = testDescription
+            default:
+                cell.SField.text = ""
+                cell.SValue.text = ""
         }
+        
         return cell
     }
-
-
 }

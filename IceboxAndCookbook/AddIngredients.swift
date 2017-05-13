@@ -32,7 +32,7 @@ class AddIngredients: UITableViewController, UIPickerViewDelegate {
         db.createDataBase()
         
         if db.openDatabase() {
-            let statement = db.fetch(table: "typeList", cond: "iId")
+            let statement = db.fetch(table: "foodType", cond: "iId")
             
             fType.removeAll()
             
@@ -49,18 +49,20 @@ class AddIngredients: UITableViewController, UIPickerViewDelegate {
             
             while sqlite3_step(statement) == SQLITE_ROW {
                 let n:String = String(cString: sqlite3_column_text(statement, 1))
-                let t:String = String(cString: sqlite3_column_text(statement, 2))
+                let t = String(cString: sqlite3_column_text(statement, 2))
                 let a:Int    = Int(sqlite3_column_int(statement, 3))
                 let d:String = String(cString: sqlite3_column_text(statement, 4))
                 
                 var aC:Int = 0
+                var aI:Int = 0
                 
-                for aI in 0..<fType.count {
-                    print("\(aI)-\(fType[aI])")
-                    if fType[aI] == t {
+                for i in fType {
+                    if t.range(of: i) != nil {
                         aC = aI
-                        break
+                        print("aC=\(aC)")
                     }
+                    
+                    aI += 1
                 }
                 
                 let dateFormat = DateFormatter()
@@ -146,10 +148,10 @@ class AddIngredients: UITableViewController, UIPickerViewDelegate {
                 return
             }
             
-            db.addData(table: "iceBox", kv: ["iName", "\(AzName.text!)"], ["iCount", "\(AzAmount.text!)"], ["iType", "\(AzType)"], ["iDate", formatter.string(from: AzDate.date)])
+            db.addData(table: "iceBox", kv: ["iName", "\(AzName.text!)"], ["iAmount", "\(AzAmount.text!)"], ["iType", "\(AzType)"], ["iDate", formatter.string(from: AzDate.date)])
             ShowWarningWindow(title: "系統訊息！", message: "新增成功．", back: true)
         } else {
-            db.updateData(table: "iceBox", kv: ["iName", "\(AzName.text!)"], kv2: ["iCount", "\(AzAmount.text!)"], ["iType", "\(AzType)"], ["iDate", formatter.string(from: AzDate.date)])
+            db.updateData(table: "iceBox", kv: ["iName", "\(AzName.text!)"], kv2: ["iAmount", "\(AzAmount.text!)"], ["iType", "\(AzType)"], ["iDate", formatter.string(from: AzDate.date)])
             ShowWarningWindow(title: "系統訊息！", message: "更新成功．", back: true)
         }
         

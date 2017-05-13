@@ -14,7 +14,7 @@
         <!--首頁_版-->
         <scene sceneID="sx2-2P-VB1">
             <objects>
-                <viewController id="Je9-VO-BW9" userLabel="首頁_版" sceneMemberID="viewController">
+                <viewController id="Je9-VO-BW9" userLabel="首頁_版" customClass="Home" customModule="IceboxAndCookbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TyI-76-zVU"/>
                         <viewControllerLayoutGuide type="bottom" id="4Ns-Sl-gdg"/>
@@ -57,6 +57,9 @@
                             <constraint firstItem="mP2-5L-rnr" firstAttribute="top" secondItem="2Uk-wx-3Fe" secondAttribute="top" constant="330" id="mPX-wH-oZ8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clickStrat" destination="mP2-5L-rnr" id="geD-vQ-Wt7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaM-dX-dEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -465,7 +468,7 @@
                                     <outlet property="RName" destination="31S-PS-3YI" id="VEr-aW-AHf"/>
                                     <outlet property="RWatch" destination="6tT-3d-Map" id="RnT-cS-SMJ"/>
                                     <outlet property="RfoodImage" destination="lAe-XN-OLd" id="ysc-P3-E94"/>
-                                    <segue destination="FA3-oM-cbG" kind="show" id="s5M-sZ-aMH"/>
+                                    <segue destination="FA3-oM-cbG" kind="show" identifier="rr" id="s5M-sZ-aMH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -567,6 +570,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SImage" destination="Bk7-uG-FiD" id="V75-mv-vg8"/>
+                        <outlet property="iLike" destination="X6A-xX-RFy" id="CHa-ma-yaU"/>
                         <outlet property="searchDisplayController" destination="Eks-AQ-BXa" id="r6l-2W-8gU"/>
                     </connections>
                 </viewController>
@@ -824,7 +828,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="whx-JJ-2wH"/>
                                                     </constraints>
-                                                    <state key="normal" image="愛心(滿)">
+                                                    <state key="normal">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
@@ -1062,13 +1066,12 @@
     <resources>
         <image name="18280937_1977253315849390_866485234_n" width="353" height="482"/>
         <image name="愛心" width="30" height="60"/>
-        <image name="愛心(滿)" width="30" height="60"/>
         <image name="我的冰箱" width="32" height="32"/>
         <image name="推薦食譜" width="32" height="32"/>
         <image name="皇冠_32" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s5M-sZ-aMH"/>
         <segue reference="3b5-US-pKh"/>
+        <segue reference="iPy-uL-txh"/>
     </inferredMetricsTieBreakers>
 </document>

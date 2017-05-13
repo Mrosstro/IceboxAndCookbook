@@ -9,20 +9,15 @@ import UIKit
 
 class RecommendCook: UITableViewController {
     let db = DBManage()     // 呼叫資料庫
-    
+    var statement:OpaquePointer? = nil
+
     var iName:[String] = [] // 食材名稱
     var iLove:[Int]    = [] // 食材有效下期
     var iView:[Int]    = [] // 食材數量
 
-    //▼範例用
-    var testName: [String] = ["番茄義大利麵","豬肉水餃","貢丸湯","羊肉爐"]
-    var testLike: [String] = ["1000","3000","5000","3000"]
-    var testWatch: [String] = ["10000","50000","30000","20000"]
-    
     //▼刷新頁面
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         db.Init()
         
@@ -40,7 +35,7 @@ class RecommendCook: UITableViewController {
             sqlite3_finalize(statement)
             
             for i in 0..<a.count {
-                sql = sql + "iRequire like'%\(a[i])%'"
+                sql = sql + "rRequire like'%\(a[i])%'"
                 sql = sql + ((i == (a.count-1)) ? "" : " OR ")
             }
             
@@ -90,7 +85,7 @@ class RecommendCook: UITableViewController {
             sqlite3_finalize(statement)
             
             for i in 0..<a.count {
-                sql = sql + "iRequire like'%\(a[i])%'"
+                sql = sql + "rRequire like'%\(a[i])%'"
                 sql = sql + ((i == (a.count-1)) ? "" : " OR ")
             }
             
@@ -141,6 +136,18 @@ class RecommendCook: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "rr" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let data = segue.destination as! SeeViewController
+                
+                data.gData = true
+                data.gName = iName[indexPath.row]
+            }
+        }
+    }
+    
     @IBAction func ClickLove(_ sender: UIButton) {
         
     }

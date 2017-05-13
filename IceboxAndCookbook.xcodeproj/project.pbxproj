@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C21E5ED1EC57D8D002F31D4 /* AddCookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21E5EC1EC57D8D002F31D4 /* AddCookBook.swift */; };
+		2C21E5F01EC59F17002F31D4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21E5EF1EC59F17002F31D4 /* Home.swift */; };
 		2C4BD4871EC3119C0093DFCF /* SeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */; };
 		2C6133A61EBF16D000ED5BA3 /* CookRK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133A51EBF16D000ED5BA3 /* CookRK.swift */; };
 		2C6133AC1EC002C200ED5BA3 /* MyCookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6133AB1EC002C200ED5BA3 /* MyCookBook.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2C21E5EC1EC57D8D002F31D4 /* AddCookBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCookBook.swift; sourceTree = "<group>"; };
+		2C21E5EF1EC59F17002F31D4 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2C4BD4861EC3119C0093DFCF /* SeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeViewController.swift; sourceTree = "<group>"; };
 		2C6133A51EBF16D000ED5BA3 /* CookRK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookRK.swift; sourceTree = "<group>"; };
 		2C6133AB1EC002C200ED5BA3 /* MyCookBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCookBook.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 				2C21E5EC1EC57D8D002F31D4 /* AddCookBook.swift */,
 			);
 			name = "新增食譜AC";
+			sourceTree = "<group>";
+		};
+		2C21E5EE1EC59EE5002F31D4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C21E5EF1EC59F17002F31D4 /* Home.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		2C6133A71EC0028000ED5BA3 /* 我的食譜M */ = {
@@ -169,6 +179,7 @@
 		2C9153291EB9E70600371521 /* IceboxAndCookbook */ = {
 			isa = PBXGroup;
 			children = (
+				2C21E5EE1EC59EE5002F31D4 /* Home */,
 				2C21E5E91EC57AFB002F31D4 /* 雜物 */,
 				2C6133DA1EC184E200ED5BA3 /* SQLite */,
 				2C6133AF1EC0200400ED5BA3 /* 食譜閱讀S */,
@@ -371,6 +382,7 @@
 				2C91532B1EB9E70600371521 /* AppDelegate.swift in Sources */,
 				2C21E5ED1EC57D8D002F31D4 /* AddCookBook.swift in Sources */,
 				2C6133DD1EC1880500ED5BA3 /* DBManage.swift in Sources */,
+				2C21E5F01EC59F17002F31D4 /* Home.swift in Sources */,
 				2C6133AC1EC002C200ED5BA3 /* MyCookBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

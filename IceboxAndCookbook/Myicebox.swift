@@ -11,46 +11,48 @@ class Myicebox: UITableViewController {
     
     //▼宣告
     let db = DBManage()     // 呼叫資料庫
+    var statement:OpaquePointer? = nil
     
     var iName:[String] = [] // 食材名稱
     var iAmount:[Int]  = [] // 食材數量
     var iDay:[Int]     = [] // 食材有效下期
-
+    
+    let dateFormat     = DateFormatter()
     var cDay:Int       = -1 // 取今日
     
     //▼刷新頁面
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let dateFormat = DateFormatter()
         dateFormat.dateFormat = "dd"
-        
         cDay = Int(dateFormat.string(from: Date()))!
-        
-        db.Init();
-        // db.deleteDataBase();
-        db.createDataBase();
+
+        db.Init()
         
         if db.openDatabase() {
-            let statement = db.fetch(table: "iceBox", cond: "iId")
-            
             iName.removeAll()
             iAmount.removeAll()
             iDay.removeAll()
             
+            statement = db.fetch(table: "iceBox", cond: "iId")
+            
             while sqlite3_step(statement) == SQLITE_ROW {
-                let n:String = String(cString: sqlite3_column_text(statement, 1))
-                let a:Int    = Int(sqlite3_column_int(statement, 3))
-                let d:Int    = Int(String(cString: sqlite3_column_text(statement, 4)).components(separatedBy: "-")[2])! - cDay
+                let _name:String = String(cString: sqlite3_column_text(statement, 1))
+                let _amount:Int  = Int(sqlite3_column_int(statement, 3))
+                let _day:Int     = Int(String(cString: sqlite3_column_text(statement, 4)).components(separatedBy: "-")[2])! - cDay
                 
-                iName.append(n)
-                iAmount.append(a)
-                iDay.append(d)
+                iName.append(_name)
+                iAmount.append(_amount)
+                iDay.append(_day)
             }
+            
+            sqlite3_finalize(statement)
             
             db.closeDatabase()
         }
         
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.reloadData()
     }
     
@@ -58,85 +60,36 @@ class Myicebox: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 設定格式為：天
-        let dateFormat = DateFormatter()
         dateFormat.dateFormat = "dd"
-        
         cDay = Int(dateFormat.string(from: Date()))!
         
-        db.Init();
-        // db.deleteDataBase();
-        db.createDataBase();
+        db.Init()
         
         if db.openDatabase() {
-            var tableEmpty:Bool = true
-            var statement:OpaquePointer? = nil
-            var sql:String      = ""
-                sql = "create table iceBox ("
-                sql = sql + "iId integer primary key autoincrement not null, "
-                sql = sql + "iName  text not null, "
-                sql = sql + "iType  text not null, "
-                sql = sql + "iCount text not null, "
-                sql = sql + "iDate  text not null"
-                sql = sql + ")"
-            
-            // 創建：typeList 資料表
-            _ = db.createTable(sql: "create table typeList (iId integer primary key autoincrement not null, iName text not null)")
-            
-            // 創建：iceBox 資料表
-            _ = db.createTable(sql: sql)
-            statement = db.fetch(table: "typeList", cond: "iId")
-            
-            while sqlite3_step(statement) == SQLITE_ROW {
-                tableEmpty = false
-                break;
-            }
-            
-            if tableEmpty {
-                print("typeList 資料表是空的")
-                
-                let foodtype = ["肉類","蔬菜","魚類","菇類","瓜類","豆類","奶類","水果","飲料","調味品","其他食材"]
-                
-                for ft in foodtype {
-                    db.addData(table: "typeList", kv: ["iName", ft])
-                    print("typeList 新增：\(ft)")
-                }
-            }
-            
-            sqlite3_finalize(statement)
-
-//            self.db.deleteData(table: "iceBox", kv: ["iName", "番茄"])
-
-            statement = db.fetch(table: "iceBox", cond: "iId")
-            
             iName.removeAll()
             iAmount.removeAll()
             iDay.removeAll()
             
+            statement = db.fetch(table: "iceBox", cond: "iId")
+            
             while sqlite3_step(statement) == SQLITE_ROW {
-                let n:String = String(cString: sqlite3_column_text(statement, 1))
-                let a:Int    = Int(sqlite3_column_int(statement, 3))
-                let d:Int    = Int(String(cString: sqlite3_column_text(statement, 4)).components(separatedBy: "-")[2])! - cDay
+                let _name:String = String(cString: sqlite3_column_text(statement, 1))
+                let _amount:Int  = Int(sqlite3_column_int(statement, 3))
+                let _day:Int     = Int(String(cString: sqlite3_column_text(statement, 4)).components(separatedBy: "-")[2])! - cDay
                 
-                iName.append(n)
-                iAmount.append(a)
-                iDay.append(d)
+                iName.append(_name)
+                iAmount.append(_amount)
+                iDay.append(_day)
             }
             
-            // 創建：recipeList 資料表
-            //_ = db.createTable(sql: "drop table recipeList")
-            
-            _ = db.createTable(sql: "create table recipeList (iId integer primary key autoincrement not null, iImage text not null, iName text not null, iRequire text not null, iDesc text not null, iLove text not null, iView text not null)")
-
-//            db.addData(table: "recipeList", kv: ["iImage", ""], ["iName", "大黃瓜貢丸湯"], ["iRequire", "芹菜,大黃瓜,貢丸"], ["iDesc", ""], ["iLove", "1"], ["iView", "4"])
-            
-            _ = db.createTable(sql: "create table myLove (iId integer primary key autoincrement not null, iName text not null, iLove text not null)")
+            sqlite3_finalize(statement)
             
             db.closeDatabase()
         }
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.reloadData()
     }
     
     //▼傳送到...
