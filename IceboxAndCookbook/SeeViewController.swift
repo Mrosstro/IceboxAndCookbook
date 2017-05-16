@@ -25,7 +25,7 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var testDescription: String = "Step 1\n小黃瓜洗淨切除頭尾、切小段後拍碎(先拍後切也OK)。先加糖用手抓一抓後再加鹽拌勻\n\nStep 2\n先加糖用手抓一抓後再加鹽拌勻加入薑泥或蒜泥(磨成泥才能迅速入味)、辣椒和白醋拌勻，盛盤後滴入幾滴香油在小黃瓜上面，這樣就完成了。\n\nStep 3\n加入薑泥或蒜泥(磨成泥才能迅速入味)、辣椒和白醋拌勻， 盛盤後滴入幾滴香油在小黃瓜上面， 這樣就完成了。好快喔！趕快試吃一個真有入味嗎??~~好脆喔、酸酸甜甜，的確有入味耶\n\nStep 4\n好快喔！趕快試吃一個真有入味嗎?? ~~好脆喔、酸酸甜甜，的確有入味耶"
     
 
-    @IBOutlet weak var SImage: UIImageView!
+//    @IBOutlet weak var SImage: UIImageView!//
 
     //▼喜歡
     @IBAction func ClickLike(_ sender: UIBarButtonItem) {
@@ -42,13 +42,13 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
             
             print(checkLove)
             
-            if checkLove {
-                iLike.image = UIImage(named: "愛心")
-                db.deleteData(table: "myRecipe", kv: ["mRecipe", "\(testName)"])
-            } else {
-                iLike.image = UIImage(named: "愛心(滿)")
-                db.addData(table: "myRecipe", kv: ["mRecipe", "\(testName)"])
-            }
+//            if checkLove {
+//                iLike.image = UIImage(named: "愛心")
+//                db.deleteData(table: "myRecipe", kv: ["mRecipe", "\(testName)"])
+//            } else {
+//                iLike.image = UIImage(named: "愛心(滿)")
+//                db.addData(table: "myRecipe", kv: ["mRecipe", "\(testName)"])
+//            }
             
             db.closeDatabase()
         }
@@ -63,7 +63,7 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SImage.image = UIImage(named: testimage)
+//        SImage.image = UIImage(named: testimage)//
         
         db.Init()
         
@@ -105,6 +105,7 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
         
         iLike.image = UIImage(named: "愛心_滿")
+        
     }
     
     //▼替換文字
@@ -117,37 +118,39 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //▼有幾組 row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         tableView.estimatedRowHeight = 36
         tableView.rowHeight          = UITableViewAutomaticDimension
-        
-        return 3
+        return 4
     }
     
     //▼顯示 row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SeeCookBookTableViewCell", for: indexPath) as! SeeCookBookTableViewCell
         
+        
         switch indexPath.row {
             case 0:
+                cell.SImage.image = UIImage(named: testimage)
+                cell.SField.text = ""
+                cell.SValue.text = ""
+            case 1:
                 print("準備名稱")
                 print(indexPath.row)
                 cell.SField.text = "名稱"
-                cell.SValue.text = testName
+                cell.SValue.text = "\n\(testName)\n"
                 print("完成名稱")
                 print(indexPath.row)
-            case 1:
+            case 2:
                 print("準備食材")
                 cell.SField.text = "食材"
                 testIngredients = CharacterChange(ChangeText: testIngredients)
-                cell.SValue.text = testIngredients
+                cell.SValue.text = "\n\(testIngredients)\n"
                 print("完成食材")
-            case 2:
+            case 3:
                 cell.SField.text = "做法"
-                cell.SValue.text = testDescription
+                cell.SValue.text = "\n\(testDescription)\n"
             default:
-                cell.SField.text = ""
-                cell.SValue.text = ""
+                return cell
         }
         
         return cell

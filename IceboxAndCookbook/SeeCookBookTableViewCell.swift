@@ -10,6 +10,7 @@ import UIKit
 
 class SeeCookBookTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var SImage: UIImageView!
     @IBOutlet weak var SField: UILabel!
     @IBOutlet weak var SValue: UILabel!
     

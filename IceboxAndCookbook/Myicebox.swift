@@ -19,6 +19,8 @@ class Myicebox: UITableViewController {
     
     let dateFormat     = DateFormatter()
     var cDay:Int       = -1 // 取今日
+    var cDay:Int       = -1 // 取今日
+    var cDay:Int       = -1 // 取今日
     
     //▼刷新頁面
     override func viewDidAppear(_ animated: Bool) {
@@ -60,6 +62,10 @@ class Myicebox: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight          = UITableViewAutomaticDimension
+        tableView.tableFooterView    = UIView()
+        
         dateFormat.dateFormat = "dd"
         cDay = Int(dateFormat.string(from: Date()))!
         
@@ -87,8 +93,6 @@ class Myicebox: UITableViewController {
             db.closeDatabase()
         }
         
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.reloadData()
     }
     
@@ -137,6 +141,7 @@ class Myicebox: UITableViewController {
     
     //▼有幾組 row
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return iName.count
     }
 

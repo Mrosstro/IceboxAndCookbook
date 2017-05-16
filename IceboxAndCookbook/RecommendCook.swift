@@ -32,7 +32,16 @@ class RecommendCook: UITableViewController {
                 a.append(n)
             }
             
+            print()
             sqlite3_finalize(statement)
+            
+            if a.count <= 0 {
+                print("0執行成功")
+                iName.removeAll()
+                print(iName)
+                tableView.reloadData()
+                return
+            }
             
             for i in 0..<a.count {
                 sql = sql + "rRequire like'%\(a[i])%'"
@@ -62,12 +71,15 @@ class RecommendCook: UITableViewController {
             
             tableView.reloadData()
         }
-        
     }
     
     //▼初始化
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView    = UIView()
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight          = UITableViewAutomaticDimension
         
         db.Init()
         
@@ -81,8 +93,13 @@ class RecommendCook: UITableViewController {
                 let n:String = String(cString: sqlite3_column_text(statement, 1))
                 a.append(n)
             }
-            
+            print(a)
             sqlite3_finalize(statement)
+            
+            if a.count <= 0 {
+                print("0執行成功")
+                return
+            }
             
             for i in 0..<a.count {
                 sql = sql + "rRequire like'%\(a[i])%'"
@@ -111,8 +128,8 @@ class RecommendCook: UITableViewController {
             db.closeDatabase()
         }
         
-        tableView.estimatedRowHeight = 70
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.reloadData()
+        
     }
     
     // row 選擇第＊個 didSelectRowAt
@@ -123,6 +140,7 @@ class RecommendCook: UITableViewController {
     
     //▼有幾組 row
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return iName.count
     }
     
@@ -130,9 +148,12 @@ class RecommendCook: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendCookTableViewCell", for: indexPath) as! RecommendCookTableViewCell
         
-        cell.RName.text  = "\(iName[indexPath.row])"
-        cell.RLike.text  = "❤️：\(iLove[indexPath.row])"
-        cell.RWatch.text = "👁‍🗨：\(iView[indexPath.row])"
+        cell.RName.text      = "\(iName[indexPath.row])"
+        cell.RLike.text      = "❤️：\(iLove[indexPath.row])"
+        cell.RWatch.text     = "👁‍🗨：\(iView[indexPath.row])"
+        
+        cell.RLike.isHidden  = true
+        cell.RWatch.isHidden = true
         
         return cell
     }

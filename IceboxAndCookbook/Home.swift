@@ -33,8 +33,6 @@ class Home: UIViewController {
             // 我的食譜
             _ = db.createTable(sql: "create table myRecipe (iId integer primary key autoincrement not null, mName text not null, mRecipe text not null)")
             
-            
-            
             //  檢查“食物類型”是否為空的，若是空的添加“食物類型”資料
             var typeEmpty:Bool = true
             
