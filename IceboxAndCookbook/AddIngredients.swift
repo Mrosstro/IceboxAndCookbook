@@ -13,6 +13,8 @@ class AddIngredients: UITableViewController, UIPickerViewDelegate {
     
     var gData:Bool = false
     var gName:String?
+    var gYear:Int?
+    var gMonth:Int?
     var gDay:Int?
     
     //▼宣告
@@ -83,7 +85,19 @@ class AddIngredients: UITableViewController, UIPickerViewDelegate {
             
             sqlite3_finalize(statement)
             
-            if (gDay! < 0) {
+            if gYear! > 0 {
+                return
+            }
+            
+            if gMonth! > 0 {
+                return
+            }
+            
+            if gDay! >= 0 {
+                return
+            }
+            
+           // if gYear! < 0 && gMonth! < 0 && gDay! < 0 {
                 let uiAC     = UIAlertController(title: "系統訊息！", message: "該 \(gName!) 食材過期，請刪除．", preferredStyle: .alert)
                 let uiAA_del = UIAlertAction(title: "刪除", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
                     print("1")
@@ -102,7 +116,7 @@ class AddIngredients: UITableViewController, UIPickerViewDelegate {
                 self.present(uiAC, animated: true, completion: nil)
                 
                 return
-            }
+           // }
             
         } else {
             self.Finish.title = "新增"

@@ -1,10 +1,3 @@
-//
-//  SeeViewController.swift
-//  IceboxAndCookbook
-//
-//  Created by Mrosstro on 2017/5/10.
-//  Copyright © 2017年 Mrosstro. All rights reserved.
-//
 
 import UIKit
 
@@ -76,7 +69,8 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     let _require:String = String(cString: sqlite3_column_text(statement, 3))
                     let _desc:String    = String(cString: sqlite3_column_text(statement, 4))
                     
-                    testName = _name
+                    testimage = _name
+                    testName  = _name
                     testIngredients = _require
                     testDescription = _desc
                     
@@ -148,6 +142,7 @@ class SeeViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 print("完成食材")
             case 3:
                 cell.SField.text = "做法"
+                testDescription = CharacterChange(ChangeText: testDescription)
                 cell.SValue.text = "\n\(testDescription)\n"
             default:
                 return cell

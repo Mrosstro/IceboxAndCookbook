@@ -112,7 +112,7 @@ class MyCookBook: UITableViewController {
     //▼顯示 row
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCookBookTableViewCell", for: indexPath) as! MyCookBookTableViewCell
-        
+        cell.MfoodImage.image = UIImage(named: "\(iName[indexPath.row])")
         cell.MName.text      = "\(iName[indexPath.row])"
         cell.MLike.text      = "❤️：\(iLove[indexPath.row])"
         cell.MWatch.text     = "👁‍🗨：\(iView[indexPath.row])"

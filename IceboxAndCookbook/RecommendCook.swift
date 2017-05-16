@@ -148,6 +148,8 @@ class RecommendCook: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendCookTableViewCell", for: indexPath) as! RecommendCookTableViewCell
         
+        cell.RfoodImage.image = UIImage(named: "\(iName[indexPath.row])")
+        
         cell.RName.text      = "\(iName[indexPath.row])"
         cell.RLike.text      = "❤️：\(iLove[indexPath.row])"
         cell.RWatch.text     = "👁‍🗨：\(iView[indexPath.row])"
